@@ -18,7 +18,7 @@ export const recipes: Recipe[] = [
             { id: "fish", name: "Fish", icon: "🐟" },
             { id: "ice-cream", name: "Ice Cream", icon: "🍦" },
         ],
-        backgroundColor: "from-red-400 to-orange-400",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-amber-100",
     },
     {
@@ -38,7 +38,7 @@ export const recipes: Recipe[] = [
             { id: "candy", name: "Candy", icon: "🍬" },
             { id: "popcorn", name: "Popcorn", icon: "🍿" },
         ],
-        backgroundColor: "from-yellow-400 to-amber-500",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100",
     },
     {
@@ -58,7 +58,7 @@ export const recipes: Recipe[] = [
             { id: "cookie", name: "Cookie", icon: "🍪" },
             { id: "donut", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-green-400 to-emerald-500",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100",
     },
     {
@@ -78,7 +78,7 @@ export const recipes: Recipe[] = [
             { id: "egg", name: "Egg", icon: "🥚" },
             { id: "pepper", name: "Hot Pepper", icon: "🌶️" },
         ],
-        backgroundColor: "from-pink-400 to-purple-500",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-pink-100",
     },
     {
@@ -98,7 +98,7 @@ export const recipes: Recipe[] = [
             { id: "garlic", name: "Garlic", icon: "🧄" },
             { id: "steak", name: "Steak", icon: "🥩" },
         ],
-        backgroundColor: "from-orange-300 to-yellow-400",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-orange-100",
     },
     {
@@ -118,7 +118,7 @@ export const recipes: Recipe[] = [
             { id: "strawberry-taco", name: "Strawberry", icon: "🍓" },
             { id: "cake-taco", name: "Cake", icon: "🍰" },
         ],
-        backgroundColor: "from-yellow-400 to-red-500",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-50",
     },
     {
@@ -138,7 +138,7 @@ export const recipes: Recipe[] = [
             { id: "potato", name: "Potato", icon: "🥔" },
             { id: "fish-cupcake", name: "Fish", icon: "🐟" },
         ],
-        backgroundColor: "from-pink-300 to-rose-400",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-pink-100",
     },
     {
@@ -158,7 +158,7 @@ export const recipes: Recipe[] = [
             { id: "cake-ramen", name: "Cake", icon: "🍰" },
             { id: "bread-ramen", name: "Bread", icon: "🍞" },
         ],
-        backgroundColor: "from-orange-500 to-red-600",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-red-50",
     },
     {
@@ -178,7 +178,7 @@ export const recipes: Recipe[] = [
             { id: "ketchup-donut", name: "Ketchup", icon: "🍅" },
             { id: "cheese-donut", name: "Cheese", icon: "🧀" },
         ],
-        backgroundColor: "from-purple-400 to-fuchsia-500",
+        backgroundColor: "from-[var(--c-lavender)] to-[var(--c-lavender)]",
         plateColor: "bg-purple-100",
     },
     {
@@ -198,7 +198,7 @@ export const recipes: Recipe[] = [
             { id: "milk-hotdog", name: "Milk", icon: "🥛" },
             { id: "soup", name: "Soup", icon: "🥣" },
         ],
-        backgroundColor: "from-yellow-500 to-orange-500",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-orange-50",
     },
     {
@@ -218,7 +218,7 @@ export const recipes: Recipe[] = [
             { id: "fish-icecream", name: "Fish", icon: "🐟" },
             { id: "garlic-icecream", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-blue-300 to-cyan-400",
+        backgroundColor: "from-[var(--c-sky)] to-[var(--c-sky)]",
         plateColor: "bg-blue-50",
     },
     {
@@ -238,7 +238,7 @@ export const recipes: Recipe[] = [
             { id: "apple-fries", name: "Apple", icon: "🍎" },
             { id: "cake-fries", name: "Cake", icon: "🍰" },
         ],
-        backgroundColor: "from-red-500 to-yellow-500",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-red-100",
     },
     {
@@ -258,7 +258,7 @@ export const recipes: Recipe[] = [
             { id: "rock", name: "Rock", icon: "🪨" },
             { id: "soup-sandwich", name: "Soup", icon: "🥣" },
         ],
-        backgroundColor: "from-green-400 to-teal-500",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-50",
     },
     {
@@ -278,7 +278,7 @@ export const recipes: Recipe[] = [
             { id: "mustard-cookie", name: "Mustard", icon: "🌭" },
             { id: "fish-cookie", name: "Fish", icon: "🐟" },
         ],
-        backgroundColor: "from-amber-600 to-orange-700",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-amber-100",
     },
     {
@@ -298,7 +298,7 @@ export const recipes: Recipe[] = [
             { id: "bread-popcorn", name: "Bread", icon: "🍞" },
             { id: "apple-popcorn", name: "Apple", icon: "🍎" },
         ],
-        backgroundColor: "from-red-400 to-white",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-red-50",
     },
     {
@@ -318,8 +318,8 @@ export const recipes: Recipe[] = [
             { id: "ice-cream-bento", name: "Ice Cream", icon: "🍦" },
             { id: "shoe", name: "Shoe", icon: "👞" },
         ],
-        backgroundColor: "from-yellow-300 to-green-400",
-        plateColor: "bg-green-100",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
+        plateColor: "bg-yellow-100",
     },
     {
         id: "soup",
@@ -338,8 +338,8 @@ export const recipes: Recipe[] = [
             { id: "sneaker", name: "Sneaker", icon: "👟" },
             { id: "sand", name: "Sand", icon: "🏖️" },
         ],
-        backgroundColor: "from-green-600 to-emerald-700",
-        plateColor: "bg-emerald-100",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
+        plateColor: "bg-green-100",
     },
     {
         id: "pie",
@@ -358,7 +358,7 @@ export const recipes: Recipe[] = [
             { id: "garlic-pie", name: "Garlic", icon: "🧄" },
             { id: "fish-pie", name: "Fish", icon: "🐟" },
         ],
-        backgroundColor: "from-red-700 to-orange-800",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-orange-100",
     },
     {
@@ -378,7 +378,7 @@ export const recipes: Recipe[] = [
             { id: "donut-curry", name: "Donut", icon: "🍩" },
             { id: "banana-curry", name: "Banana", icon: "🍌" },
         ],
-        backgroundColor: "from-yellow-600 to-orange-600",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100",
     },
     {
@@ -398,7 +398,7 @@ export const recipes: Recipe[] = [
             { id: "lettuce-croissant", name: "Lettuce", icon: "🥬" },
             { id: "mustard-croissant", name: "Mustard", icon: "🌭" },
         ],
-        backgroundColor: "from-amber-200 to-yellow-300",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-amber-50",
     },
     {
@@ -418,7 +418,7 @@ export const recipes: Recipe[] = [
             { id: "cake-burrito", name: "Cake", icon: "🍰" },
             { id: "soup-burrito", name: "Soup", icon: "🥣" },
         ],
-        backgroundColor: "from-yellow-500 to-green-500",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100",
     },
     {
@@ -438,7 +438,7 @@ export const recipes: Recipe[] = [
             { id: "cookie-pasta", name: "Cookie", icon: "🍪" },
             { id: "sand-pasta", name: "Sand", icon: "🏖️" },
         ],
-        backgroundColor: "from-red-400 to-orange-500",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-orange-50",
     },
     {
@@ -458,7 +458,7 @@ export const recipes: Recipe[] = [
             { id: "lettuce-mac", name: "Lettuce", icon: "🥬" },
             { id: "ketchup-mac", name: "Ketchup", icon: "🍅" },
         ],
-        backgroundColor: "from-yellow-300 to-orange-400",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-50",
     },
     {
@@ -478,7 +478,7 @@ export const recipes: Recipe[] = [
             { id: "ice-cube-nugget", name: "Ice", icon: "🧊" },
             { id: "soup-nugget", name: "Soup", icon: "🍲" },
         ],
-        backgroundColor: "from-orange-200 to-amber-300",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-orange-50",
     },
     {
@@ -498,7 +498,7 @@ export const recipes: Recipe[] = [
             { id: "fish-toast", name: "Fish", icon: "🐟" },
             { id: "garlic-toast", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-yellow-200 to-orange-300",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-50",
     },
     {
@@ -518,8 +518,8 @@ export const recipes: Recipe[] = [
             { id: "lettuce-grilled", name: "Lettuce", icon: "🥬" },
             { id: "apple-grilled", name: "Apple", icon: "🍎" },
         ],
-        backgroundColor: "from-yellow-400 to-orange-400",
-        plateColor: "bg-orange-50",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
+        plateColor: "bg-yellow-50",
     },
     {
         id: "fruitsalad",
@@ -538,7 +538,7 @@ export const recipes: Recipe[] = [
             { id: "fish-salad", name: "Fish", icon: "🐟" },
             { id: "onion-salad", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-pink-200 to-purple-300",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-pink-50",
     },
     {
@@ -558,7 +558,7 @@ export const recipes: Recipe[] = [
             { id: "ice-quesa", name: "Ice", icon: "🧊" },
             { id: "donut-quesa", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-yellow-300 to-orange-400",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-50",
     },
     {
@@ -578,7 +578,7 @@ export const recipes: Recipe[] = [
             { id: "fish-mash", name: "Fish", icon: "🐟" },
             { id: "candy-mash", name: "Candy", icon: "🍬" },
         ],
-        backgroundColor: "from-yellow-100 to-amber-200",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-50",
     },
     {
@@ -598,7 +598,7 @@ export const recipes: Recipe[] = [
             { id: "cake-bagel", name: "Cake", icon: "🍰" },
             { id: "soup-bagel", name: "Soup", icon: "🍲" },
         ],
-        backgroundColor: "from-orange-100 to-amber-200",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-orange-50",
     },
     {
@@ -618,7 +618,7 @@ export const recipes: Recipe[] = [
             { id: "fish-cereal", name: "Fish", icon: "🐟" },
             { id: "onion-cereal", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-blue-200 to-cyan-300",
+        backgroundColor: "from-[var(--c-sky)] to-[var(--c-sky)]",
         plateColor: "bg-blue-50",
     },
     {
@@ -638,7 +638,7 @@ export const recipes: Recipe[] = [
             { id: "ketchup-pbj", name: "Ketchup", icon: "🍅" },
             { id: "onion-pbj", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-purple-300 to-pink-400",
+        backgroundColor: "from-[var(--c-lavender)] to-[var(--c-lavender)]",
         plateColor: "bg-purple-50",
     },
     {
@@ -658,7 +658,7 @@ export const recipes: Recipe[] = [
             { id: "ice-cream-soup", name: "Ice Cream", icon: "🍦" },
             { id: "donut-soup", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-yellow-200 to-amber-300",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-50",
     },
     {
@@ -678,7 +678,7 @@ export const recipes: Recipe[] = [
             { id: "milk-fish", name: "Milk", icon: "🥛" },
             { id: "candy-fish", name: "Candy", icon: "🍬" },
         ],
-        backgroundColor: "from-blue-300 to-cyan-400",
+        backgroundColor: "from-[var(--c-sky)] to-[var(--c-sky)]",
         plateColor: "bg-blue-50",
     },
     {
@@ -698,7 +698,7 @@ export const recipes: Recipe[] = [
             { id: "fish-waffle", name: "Fish", icon: "🐟" },
             { id: "onion-waffle", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-orange-300 to-amber-400",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-orange-50",
     },
     {
@@ -718,7 +718,7 @@ export const recipes: Recipe[] = [
             { id: "ice-cream-omelette", name: "Ice Cream", icon: "🍦" },
             { id: "cookie-omelette", name: "Cookie", icon: "🍪" },
         ],
-        backgroundColor: "from-yellow-300 to-orange-300",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-50",
     },
     {
@@ -738,7 +738,7 @@ export const recipes: Recipe[] = [
             { id: "cake-nacho", name: "Cake", icon: "🍰" },
             { id: "donut-nacho", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-yellow-400 to-orange-500",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-50",
     },
     {
@@ -758,7 +758,7 @@ export const recipes: Recipe[] = [
             { id: "lettuce-pretzel", name: "Lettuce", icon: "🥬" },
             { id: "soup-pretzel", name: "Soup", icon: "🍲" },
         ],
-        backgroundColor: "from-amber-600 to-yellow-700",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-amber-100",
     },
     {
@@ -778,7 +778,7 @@ export const recipes: Recipe[] = [
             { id: "onion-parfait", name: "Onion", icon: "🧅" },
             { id: "garlic-parfait", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-pink-100 to-rose-200",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-pink-50",
     },
     {
@@ -798,7 +798,7 @@ export const recipes: Recipe[] = [
             { id: "banana-meatball", name: "Banana", icon: "🍌" },
             { id: "cake-meatball", name: "Cake", icon: "🍰" },
         ],
-        backgroundColor: "from-red-600 to-orange-700",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-red-50",
     },
     {
@@ -818,7 +818,7 @@ export const recipes: Recipe[] = [
             { id: "strawberry-gb", name: "Strawberry", icon: "🍓" },
             { id: "jam", name: "Jam", icon: "🍇" },
         ],
-        backgroundColor: "from-yellow-200 to-orange-300",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-50",
     },
     {
@@ -838,7 +838,7 @@ export const recipes: Recipe[] = [
             { id: "soup-mix", name: "Soup", icon: "🍲" },
             { id: "ice-mix", name: "Ice", icon: "🧊" },
         ],
-        backgroundColor: "from-amber-200 to-orange-300",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-amber-50",
     },
     {
@@ -858,7 +858,7 @@ export const recipes: Recipe[] = [
             { id: "apple-egg", name: "Apple", icon: "🍎" },
             { id: "banana-egg", name: "Banana", icon: "🍌" },
         ],
-        backgroundColor: "from-yellow-100 to-amber-200",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-50",
     },
     {
@@ -878,7 +878,7 @@ export const recipes: Recipe[] = [
             { id: "apple-guac", name: "Apple", icon: "🍎" },
             { id: "cake-guac", name: "Cake", icon: "🍰" },
         ],
-        backgroundColor: "from-green-300 to-emerald-400",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-50",
     },
     {
@@ -898,7 +898,7 @@ export const recipes: Recipe[] = [
             { id: "cake-hummus", name: "Cake", icon: "🍰" },
             { id: "ice-cream-hummus", name: "Ice Cream", icon: "🍦" },
         ],
-        backgroundColor: "from-amber-100 to-yellow-200",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-amber-50",
     },
     {
@@ -918,7 +918,7 @@ export const recipes: Recipe[] = [
             { id: "fish-log", name: "Fish", icon: "🐟" },
             { id: "onion-log", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-green-200 to-emerald-300",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-50",
     },
     {
@@ -938,7 +938,7 @@ export const recipes: Recipe[] = [
             { id: "fish-puff", name: "Fish", icon: "🐟" },
             { id: "lettuce-puff", name: "Lettuce", icon: "🥬" },
         ],
-        backgroundColor: "from-yellow-200 to-orange-300",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-50",
     },
     {
@@ -958,7 +958,7 @@ export const recipes: Recipe[] = [
             { id: "cake-mini", name: "Cake", icon: "🍰" },
             { id: "ice-mini", name: "Ice", icon: "🧊" },
         ],
-        backgroundColor: "from-red-300 to-orange-400",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-orange-50",
     },
     {
@@ -978,7 +978,7 @@ export const recipes: Recipe[] = [
             { id: "lettuce-corn", name: "Lettuce", icon: "🥬" },
             { id: "fish-corn", name: "Fish", icon: "🐟" },
         ],
-        backgroundColor: "from-yellow-400 to-orange-500",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-50",
     },
     {
@@ -998,7 +998,7 @@ export const recipes: Recipe[] = [
             { id: "fis-smore", name: "Fish", icon: "🐟" },
             { id: "onion-smore", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-amber-700 to-orange-800",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-amber-100",
     },
     {
@@ -1018,7 +1018,7 @@ export const recipes: Recipe[] = [
             { id: "fish-crispy", name: "Fish", icon: "🐟" },
             { id: "onion-crispy", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-blue-100 to-cyan-200",
+        backgroundColor: "from-[var(--c-sky)] to-[var(--c-sky)]",
         plateColor: "bg-blue-50",
     },
     {
@@ -1038,7 +1038,7 @@ export const recipes: Recipe[] = [
             { id: "fish-shake", name: "Fish", icon: "🐟" },
             { id: "onion-shake", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-pink-300 to-purple-400",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-pink-100",
     },
     {
@@ -1058,7 +1058,7 @@ export const recipes: Recipe[] = [
             { id: "fish-punch", name: "Fish", icon: "🐟" },
             { id: "bread-punch", name: "Bread", icon: "🍞" },
         ],
-        backgroundColor: "from-red-300 to-pink-400",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-red-100",
     },
     {
@@ -1078,7 +1078,7 @@ export const recipes: Recipe[] = [
             { id: "cake-stick", name: "Cake", icon: "🍰" },
             { id: "ice-stick", name: "Ice", icon: "🧊" },
         ],
-        backgroundColor: "from-yellow-400 to-amber-500",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100",
     },
     {
@@ -1098,7 +1098,7 @@ export const recipes: Recipe[] = [
             { id: "donut-veggie", name: "Donut", icon: "🍩" },
             { id: "pizza-veggie", name: "Pizza", icon: "🍕" },
         ],
-        backgroundColor: "from-green-300 to-emerald-400",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100",
     },
     {
@@ -1118,7 +1118,7 @@ export const recipes: Recipe[] = [
             { id: "fish-yogurt", name: "Fish", icon: "🐟" },
             { id: "onion-yogurt", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-purple-300 to-pink-400",
+        backgroundColor: "from-[var(--c-lavender)] to-[var(--c-lavender)]",
         plateColor: "bg-purple-100",
     },
     {
@@ -1138,7 +1138,7 @@ export const recipes: Recipe[] = [
             { id: "fish-split", name: "Fish", icon: "🐟" },
             { id: "onion-split", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-yellow-300 to-orange-400",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100",
     },
     {
@@ -1158,7 +1158,7 @@ export const recipes: Recipe[] = [
             { id: "fish-choco", name: "Fish", icon: "🐟" },
             { id: "bread-choco", name: "Bread", icon: "🍞" },
         ],
-        backgroundColor: "from-brown-400 to-amber-500",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-brown-100",
     },
     {
@@ -1178,7 +1178,7 @@ export const recipes: Recipe[] = [
             { id: "onion-lemon", name: "Onion", icon: "🧅" },
             { id: "garlic-lemon", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-yellow-200 to-lime-300",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100",
     },
     {
@@ -1198,7 +1198,7 @@ export const recipes: Recipe[] = [
             { id: "cake-grill", name: "Cake", icon: "🍰" },
             { id: "donut-grill", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-orange-400 to-red-500",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-orange-100",
     },
     {
@@ -1218,7 +1218,7 @@ export const recipes: Recipe[] = [
             { id: "ice-spag", name: "Ice", icon: "🧊" },
             { id: "cake-spag", name: "Cake", icon: "🍰" },
         ],
-        backgroundColor: "from-red-400 to-orange-500",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-red-100",
     },
     {
@@ -1238,7 +1238,7 @@ export const recipes: Recipe[] = [
             { id: "donut-fishtaco", name: "Donut", icon: "🍩" },
             { id: "ice-fishtaco", name: "Ice", icon: "🧊" },
         ],
-        backgroundColor: "from-blue-300 to-cyan-400",
+        backgroundColor: "from-[var(--c-sky)] to-[var(--c-sky)]",
         plateColor: "bg-blue-100",
     },
     {
@@ -1258,7 +1258,7 @@ export const recipes: Recipe[] = [
             { id: "ice-cream-veggie", name: "Ice Cream", icon: "🍦" },
             { id: "cake-veggie", name: "Cake", icon: "🍰" },
         ],
-        backgroundColor: "from-green-400 to-lime-500",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100",
     },
     {
@@ -1278,7 +1278,7 @@ export const recipes: Recipe[] = [
             { id: "onion-skewer", name: "Onion", icon: "🧅" },
             { id: "garlic-skewer", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-pink-400 to-red-500",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-pink-100",
     },
     {
@@ -1298,7 +1298,7 @@ export const recipes: Recipe[] = [
             { id: "cake-tomato", name: "Cake", icon: "🍰" },
             { id: "donut-tomato", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-red-500 to-orange-600",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-red-100",
     },
     {
@@ -1318,7 +1318,7 @@ export const recipes: Recipe[] = [
             { id: "cake-avocado", name: "Cake", icon: "🍰" },
             { id: "ice-avocado", name: "Ice", icon: "🧊" },
         ],
-        backgroundColor: "from-green-300 to-lime-400",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100",
     },
     {
@@ -1338,7 +1338,7 @@ export const recipes: Recipe[] = [
             { id: "donut-eggsalad", name: "Donut", icon: "🍩" },
             { id: "pizza-eggsalad", name: "Pizza", icon: "🍕" },
         ],
-        backgroundColor: "from-yellow-200 to-amber-300",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100",
     },
     {
@@ -1358,7 +1358,7 @@ export const recipes: Recipe[] = [
             { id: "ice-cream-tuna", name: "Ice Cream", icon: "🍦" },
             { id: "donut-tuna", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-blue-400 to-cyan-500",
+        backgroundColor: "from-[var(--c-sky)] to-[var(--c-sky)]",
         plateColor: "bg-blue-100",
     },
     {
@@ -1378,7 +1378,7 @@ export const recipes: Recipe[] = [
             { id: "onion-cake", name: "Onion", icon: "🧅" },
             { id: "garlic-cake", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-orange-300 to-amber-400",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-orange-100",
     },
     {
@@ -1398,7 +1398,7 @@ export const recipes: Recipe[] = [
             { id: "onion-muffin", name: "Onion", icon: "🧅" },
             { id: "garlic-muffin", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-purple-400 to-indigo-500",
+        backgroundColor: "from-[var(--c-lavender)] to-[var(--c-lavender)]",
         plateColor: "bg-purple-100",
     },
     {
@@ -1418,7 +1418,7 @@ export const recipes: Recipe[] = [
             { id: "onion-chocpan", name: "Onion", icon: "🧅" },
             { id: "garlic-chocpan", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-brown-300 to-amber-400",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-brown-100",
     },
     {
@@ -1438,7 +1438,7 @@ export const recipes: Recipe[] = [
             { id: "onion-short", name: "Onion", icon: "🧅" },
             { id: "ketchup-short", name: "Ketchup", icon: "🍅" },
         ],
-        backgroundColor: "from-pink-400 to-red-500",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-pink-100",
     },
     {
@@ -1458,7 +1458,7 @@ export const recipes: Recipe[] = [
             { id: "onion-pumpkin", name: "Onion", icon: "🧅" },
             { id: "garlic-pumpkin", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-orange-500 to-amber-600",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-orange-100",
     },
     {
@@ -1478,7 +1478,7 @@ export const recipes: Recipe[] = [
             { id: "cake-watermelon", name: "Cake", icon: "🍰" },
             { id: "donut-watermelon", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-red-300 to-pink-400",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-red-100",
     },
     {
@@ -1498,7 +1498,7 @@ export const recipes: Recipe[] = [
             { id: "cake-cheeseburger", name: "Cake", icon: "🍰" },
             { id: "donut-cheeseburger", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-yellow-400 to-orange-500",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100",
     },
     {
@@ -1518,7 +1518,7 @@ export const recipes: Recipe[] = [
             { id: "ice-sloppy", name: "Ice", icon: "🧊" },
             { id: "cake-sloppy", name: "Cake", icon: "🍰" },
         ],
-        backgroundColor: "from-red-500 to-brown-600",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-red-100",
     },
     {
@@ -1538,7 +1538,7 @@ export const recipes: Recipe[] = [
             { id: "donut-fried", name: "Donut", icon: "🍩" },
             { id: "ice-fried", name: "Ice", icon: "🧊" },
         ],
-        backgroundColor: "from-yellow-300 to-amber-400",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100",
     },
     {
@@ -1558,7 +1558,7 @@ export const recipes: Recipe[] = [
             { id: "cake-stir", name: "Cake", icon: "🍰" },
             { id: "donut-stir", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-green-400 to-emerald-500",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100",
     },
     {
@@ -1578,7 +1578,7 @@ export const recipes: Recipe[] = [
             { id: "ice-cream-sushi", name: "Ice Cream", icon: "🍦" },
             { id: "donut-sushi", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-green-500 to-teal-600",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100",
     },
     {
@@ -1598,7 +1598,7 @@ export const recipes: Recipe[] = [
             { id: "cake-dumpling", name: "Cake", icon: "🍰" },
             { id: "ice-dumpling", name: "Ice", icon: "🧊" },
         ],
-        backgroundColor: "from-yellow-400 to-orange-500",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100",
     },
     {
@@ -1618,7 +1618,7 @@ export const recipes: Recipe[] = [
             { id: "cake-spring", name: "Cake", icon: "🍰" },
             { id: "pizza-spring", name: "Pizza", icon: "🍕" },
         ],
-        backgroundColor: "from-green-300 to-lime-400",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100",
     },
     {
@@ -1638,7 +1638,7 @@ export const recipes: Recipe[] = [
             { id: "ice-cream-falafel", name: "Ice Cream", icon: "🍦" },
             { id: "cake-falafel", name: "Cake", icon: "🍰" },
         ],
-        backgroundColor: "from-green-400 to-emerald-500",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100",
     },
     {
@@ -1658,7 +1658,7 @@ export const recipes: Recipe[] = [
             { id: "onion-cider", name: "Onion", icon: "🧅" },
             { id: "garlic-cider", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-red-400 to-orange-500",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-red-100",
     },
     {
@@ -1678,7 +1678,7 @@ export const recipes: Recipe[] = [
             { id: "fish-hotchoc", name: "Fish", icon: "🐟" },
             { id: "onion-hotchoc", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-brown-500 to-amber-600",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-brown-100",
     },
     {
@@ -1698,7 +1698,7 @@ export const recipes: Recipe[] = [
             { id: "broccoli-iced", name: "Broccoli", icon: "🥦" },
             { id: "garlic-iced", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-amber-200 to-yellow-300",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-amber-100",
     },
     {
@@ -1718,7 +1718,7 @@ export const recipes: Recipe[] = [
             { id: "fish-smoothiebowl", name: "Fish", icon: "🐟" },
             { id: "onion-smoothiebowl", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-purple-300 to-pink-400",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-purple-100",
     },
     {
@@ -1738,7 +1738,7 @@ export const recipes: Recipe[] = [
             { id: "broccoli-acai", name: "Broccoli", icon: "🥦" },
             { id: "garlic-acai", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-purple-500 to-violet-600",
+        backgroundColor: "from-[var(--c-lavender)] to-[var(--c-lavender)]",
         plateColor: "bg-purple-100",
     },
     {
@@ -1758,7 +1758,7 @@ export const recipes: Recipe[] = [
             { id: "fish-granola", name: "Fish", icon: "🐟" },
             { id: "onion-granola", name: "Onion", icon: "🧅" },
         ],
-        backgroundColor: "from-amber-300 to-yellow-400",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-amber-100",
     },
     {
@@ -1778,7 +1778,7 @@ export const recipes: Recipe[] = [
             { id: "onion-energy", name: "Onion", icon: "🧅" },
             { id: "garlic-energy", name: "Garlic", icon: "🧄" },
         ],
-        backgroundColor: "from-orange-300 to-red-400",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-orange-100",
     },
     {
@@ -1818,7 +1818,7 @@ export const recipes: Recipe[] = [
             { id: "cake-chipveggie", name: "Cake", icon: "🍰" },
             { id: "pizza-chipveggie", name: "Pizza", icon: "🍕" },
         ],
-        backgroundColor: "from-green-300 to-emerald-400",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100",
     },
     {
@@ -1838,7 +1838,7 @@ export const recipes: Recipe[] = [
             { id: "ice-baked", name: "Ice", icon: "🧊" },
             { id: "cake-baked", name: "Cake", icon: "🍰" },
         ],
-        backgroundColor: "from-amber-400 to-brown-500",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-amber-100",
     },
     {
@@ -1858,7 +1858,7 @@ export const recipes: Recipe[] = [
             { id: "cake-sweetfries", name: "Cake", icon: "🍰" },
             { id: "donut-sweetfries", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-orange-400 to-amber-500",
+        backgroundColor: "from-[var(--c-lavender)] to-[var(--c-lavender)]",
         plateColor: "bg-orange-100",
     },
     {
@@ -1878,7 +1878,7 @@ export const recipes: Recipe[] = [
             { id: "ice-cob", name: "Ice", icon: "🧊" },
             { id: "cake-cob", name: "Cake", icon: "🍰" },
         ],
-        backgroundColor: "from-yellow-400 to-lime-500",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100",
     },
     {
@@ -1898,7 +1898,7 @@ export const recipes: Recipe[] = [
             { id: "ice-cream-stuffed", name: "Ice Cream", icon: "🍦" },
             { id: "cake-stuffed", name: "Cake", icon: "🍰" },
         ],
-        backgroundColor: "from-red-400 to-green-500",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-red-100",
     },
     {
@@ -1918,7 +1918,7 @@ export const recipes: Recipe[] = [
             { id: "cake-meatloaf", name: "Cake", icon: "🍰" },
             { id: "ice-meatloaf", name: "Ice", icon: "🧊" },
         ],
-        backgroundColor: "from-brown-500 to-red-600",
+        backgroundColor: "from-[var(--c-lavender)] to-[var(--c-lavender)]",
         plateColor: "bg-brown-100",
     },
     {
@@ -1958,7 +1958,7 @@ export const recipes: Recipe[] = [
             { id: "ice-cream-ravioli", name: "Ice Cream", icon: "🍦" },
             { id: "donut-ravioli", name: "Donut", icon: "🍩" },
         ],
-        backgroundColor: "from-orange-400 to-red-500",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-orange-100",
     },
     {
@@ -1978,7 +1978,7 @@ export const recipes: Recipe[] = [
             { id: "cake-mansaf", name: "Cake", icon: "🍰" },
             { id: "donut-mansaf", name: "Donut", icon: "🍩" }
         ],
-        backgroundColor: "from-yellow-500 to-amber-600",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100"
     },
     {
@@ -1998,7 +1998,7 @@ export const recipes: Recipe[] = [
             { id: "popcorn-dawali", name: "Popcorn", icon: "🍿" },
             { id: "cookie-dawali", name: "Cookie", icon: "🍪" }
         ],
-        backgroundColor: "from-green-400 to-emerald-500",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100"
     },
     {
@@ -2018,7 +2018,7 @@ export const recipes: Recipe[] = [
             { id: "donut-moloukieh", name: "Donut", icon: "🍩" },
             { id: "ice-cream-moloukieh", name: "Ice Cream", icon: "🍦" }
         ],
-        backgroundColor: "from-green-500 to-teal-600",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100"
     },
     {
@@ -2038,7 +2038,7 @@ export const recipes: Recipe[] = [
             { id: "cake-fassolia", name: "Cake", icon: "🍰" },
             { id: "popcorn-fassolia", name: "Popcorn", icon: "🍿" }
         ],
-        backgroundColor: "from-red-400 to-orange-500",
+        backgroundColor: "from-[var(--c-pink)] to-[var(--c-pink)]",
         plateColor: "bg-red-100"
     },
     {
@@ -2058,7 +2058,7 @@ export const recipes: Recipe[] = [
             { id: "cake-tabbouleh", name: "Cake", icon: "🍰" },
             { id: "donut-tabbouleh", name: "Donut", icon: "🍩" }
         ],
-        backgroundColor: "from-green-400 to-emerald-500",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100"
     },
     {
@@ -2078,7 +2078,7 @@ export const recipes: Recipe[] = [
             { id: "popcorn-fattoush", name: "Popcorn", icon: "🍿" },
             { id: "cookie-fattoush", name: "Cookie", icon: "🍪" }
         ],
-        backgroundColor: "from-green-300 to-lime-400",
+        backgroundColor: "from-[var(--c-cyan)] to-[var(--c-cyan)]",
         plateColor: "bg-green-100"
     },
     {
@@ -2098,7 +2098,7 @@ export const recipes: Recipe[] = [
             { id: "donut-macaroni", name: "Donut", icon: "🍩" },
             { id: "ice-cream-macaroni", name: "Ice Cream", icon: "🍦" }
         ],
-        backgroundColor: "from-yellow-300 to-amber-400",
+        backgroundColor: "from-[var(--c-cream)] to-[var(--c-cream)]",
         plateColor: "bg-yellow-100"
     },
 ];

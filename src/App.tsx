@@ -1,5 +1,4 @@
 import { useState, useCallback, useEffect } from "react";
-import { DndContext, type DragEndEvent, useDraggable, useDroppable, useSensor, useSensors, PointerSensor } from "@dnd-kit/core";
 import confetti from "canvas-confetti";
 
 // Types
@@ -58,7 +57,7 @@ function fireConfetti() {
   }, 250);
 }
 
-// Draggable Ingredient Card
+// Ingredient Card
 function IngredientCard({
   ingredient,
   onClick,
@@ -72,42 +71,27 @@ function IngredientCard({
   isWrong: boolean;
   disabled: boolean;
 }) {
-  const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: ingredient.id,
-    data: ingredient,
-    disabled: disabled || isSelected,
-  });
-
-  const style = transform
-    ? {
-      transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
-      zIndex: 100,
-    }
-    : undefined;
-
   return (
-    <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
-      <button
-        type="button"
-        onClick={onClick}
-        disabled={disabled || isSelected}
-        className={`
-          ingredient-card relative p-4 rounded-2xl transition-all duration-300 transform touch-none
-          ${isSelected ? "scale-90 opacity-50 cursor-not-allowed" : "cursor-grab active:cursor-grabbing hover:scale-110 hover:shadow-xl hover:-translate-y-1"}
-          ${isWrong ? "animate-shake bg-red-200 border-4 border-red-500" : "bg-white border-4 border-amber-300 hover:border-amber-400"}
-          ${disabled && !isSelected ? "opacity-50 cursor-not-allowed" : ""}
-          shadow-lg hover:shadow-amber-200/50
-        `}
-      >
-        <div className="ingredient-icon text-5xl mb-2 transition-transform">{ingredient.icon}</div>
-        <p className="text-sm font-bold text-gray-700">{ingredient.name}</p>
-        {isSelected && (
-          <div className="absolute inset-0 flex items-center justify-center bg-green-400/40 rounded-2xl backdrop-blur-sm">
-            <span className="text-4xl drop-shadow-lg">✅</span>
-          </div>
-        )}
-      </button>
-    </div>
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled || isSelected}
+      className={`
+        ingredient-card relative p-4 rounded-2xl transition-all duration-300 transform
+        ${isSelected ? "scale-90 opacity-50 cursor-not-allowed" : "cursor-pointer hover:scale-110 hover:shadow-xl hover:-translate-y-1"}
+        ${isWrong ? "animate-shake bg-red-200 border-4 border-red-500" : "bg-white border-4 border-amber-300 hover:border-amber-400"}
+        ${disabled && !isSelected ? "opacity-50 cursor-not-allowed" : ""}
+        shadow-lg hover:shadow-amber-200/50
+      `}
+    >
+      <div className="ingredient-icon text-5xl mb-2 transition-transform">{ingredient.icon}</div>
+      <p className="text-sm font-bold text-gray-700">{ingredient.name}</p>
+      {isSelected && (
+        <div className="absolute inset-0 flex items-center justify-center bg-green-400/40 rounded-2xl backdrop-blur-sm">
+          <span className="text-4xl drop-shadow-lg">✅</span>
+        </div>
+      )}
+    </button>
   );
 }
 
@@ -147,12 +131,12 @@ function RecipeSelector({
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto mb-6">
+    <div className="w-full max-w-8xl mx-auto mb-6">
       <div className="flex items-center justify-between gap-2">
         <button
           onClick={() => setCurrentPage((p) => Math.max(0, p - 1))}
           disabled={currentPage === 0}
-          className="p-2 rounded-full bg-white/20 hover:bg-white/40 disabled:opacity-30 disabled:cursor-not-allowed text-white transition-colors"
+          className="p-2 rounded-full bg-[#f4f1de] hover:bg-[#e6e6ea] disabled:opacity-30 disabled:cursor-not-allowed  transition-colors shadow"
         >
           ◀️
         </button>
@@ -173,13 +157,13 @@ function RecipeSelector({
                   relative px-4 py-2 rounded-full font-bold transition-all duration-300 transform
                   ${currentRecipe.id === recipe.id
                     ? "scale-110 ring-4 ring-white shadow-xl"
-                    : "hover:scale-105"
+                    : "hover:scale-105 hover:shadow-md"
                   }
                   ${locked
-                    ? "bg-gray-400 cursor-not-allowed opacity-80"
-                    : `bg-gradient-to-r ${recipe.backgroundColor}`
+                    ? "bg-[#e6e6ea] cursor-not-allowed opacity-60"
+                    : "bg-[#f4f1de] hover:bg-[#e8e5d4]"
                   }
-                  text-white min-w-[140px]
+                   min-w-[140px] shadow
                 `}
               >
                 {locked ? (
@@ -201,64 +185,37 @@ function RecipeSelector({
         <button
           onClick={() => setCurrentPage((p) => Math.min(totalPages - 1, p + 1))}
           disabled={currentPage === totalPages - 1}
-          className="p-2 rounded-full bg-white/20 hover:bg-white/40 disabled:opacity-30 disabled:cursor-not-allowed text-white transition-colors"
+          className="p-2 rounded-full bg-[#f4f1de] hover:bg-[#e6e6ea] disabled:opacity-30 disabled:cursor-not-allowed  transition-colors shadow"
         >
           ▶️
         </button>
       </div>
-      <div className="text-center text-white/60 text-sm mt-2 font-bold">
+      <div className="text-center  text-sm mt-2 font-bold">
         Page {currentPage + 1} of {totalPages}
       </div>
     </div>
   );
 }
 
-// Droppable Plate Component
-function Plate({
-  selectedIngredients,
+// Recipe Display (floats where the plate used to be)
+function RecipeDisplay({
   recipe,
   isComplete,
 }: {
-  selectedIngredients: Ingredient[];
   recipe: Recipe;
   isComplete: boolean;
 }) {
-  const { setNodeRef, isOver } = useDroppable({
-    id: "plate",
-  });
-
-  const isEmpty = selectedIngredients.length === 0;
-
   return (
     <div
-      ref={setNodeRef}
       className={`
-      relative w-64 h-64 mx-auto rounded-full ${recipe.plateColor}
-      border-8 ${isOver ? "border-green-400 scale-105" : "border-gray-200"} shadow-2xl
-      flex flex-wrap items-center justify-center gap-2 p-4
-      transition-all duration-500
+      relative w-64 h-64 mx-auto 
+      flex flex-col items-center justify-center gap-2 p-4
+      transition-all duration-500 animate-float
       ${isComplete ? "animate-bounce-slow ring-8 ring-yellow-400 animate-pulse-glow" : ""}
-      ${isEmpty ? "animate-float" : ""}
     `}
     >
-      {isEmpty ? (
-        <div className="text-center pointer-events-none">
-          <p className="text-gray-400 font-medium mb-2">
-            Drag ingredients here!
-          </p>
-          <span className="text-3xl">👇</span>
-        </div>
-      ) : (
-        selectedIngredients.map((ingredient, index) => (
-          <div
-            key={ingredient.id}
-            className="text-4xl animate-pop"
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            {ingredient.icon}
-          </div>
-        ))
-      )}
+      <div className="text-8xl">{recipe.icon}</div>
+      <h2 className="text-2xl font-bold text-center">{recipe.name}</h2>
       {isComplete && (
         <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
           <span className="text-4xl animate-bounce">🎉</span>
@@ -299,7 +256,7 @@ function WrongIngredientModal({
         <button
           type="button"
           onClick={onClose}
-          className="bg-gradient-to-r from-orange-400 to-red-400 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform cursor-pointer"
+          className="bg-gradient-to-r from-[var(--c-cyan)] to-[var(--c-cyan)] text-gray-500 px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform cursor-pointer"
         >
           Got it! 👍
         </button>
@@ -471,7 +428,7 @@ function SuccessModal({
           <button
             type="button"
             onClick={onNextRecipe}
-            className="bg-gradient-to-r from-green-400 to-emerald-500 text-white px-5 py-3 rounded-full font-bold hover:scale-105 transition-transform cursor-pointer"
+            className="bg-gradient-to-r from-green-400 to-emerald-500 text-gray-500 px-5 py-3 rounded-full font-bold hover:scale-105 transition-transform cursor-pointer"
           >
             Next Recipe ➡️
           </button>
@@ -518,7 +475,7 @@ function TimesUpModal({
   );
 }
 
-// Progress Bar Component
+// Progress Dots Component
 function ProgressBar({
   current,
   total,
@@ -526,22 +483,81 @@ function ProgressBar({
   current: number;
   total: number;
 }) {
-  const percentage = (current / total) * 100;
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <div className="flex items-center justify-center gap-3">
+        {Array.from({ length: total }).map((_, i) => (
+          <span
+            key={i}
+            className={`
+              inline-block rounded-full transition-all duration-300
+              ${i < current
+                ? "w-6 h-6 bg-gradient-to-r from-[#7bdff2] to-[#b2f7ef] scale-100 shadow"
+                : "w-5 h-5 bg-black/10 scale-90"}
+            `}
+          />
+        ))}
+      </div>
+      <span className="font-bold text-lg">
+        {current} / {total}
+      </span>
+    </div>
+  );
+}
+
+// Header Menu (Stickers / Shop / Timer)
+function HeaderMenu({
+  isTimerMode,
+  onToggleTimer,
+  onOpenStickers,
+  onOpenShop,
+}: {
+  isTimerMode: boolean;
+  onToggleTimer: () => void;
+  onOpenStickers: () => void;
+  onOpenShop: () => void;
+}) {
+  const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full max-w-md mx-auto mb-2">
-      <div className="flex justify-between mb-2">
-        <span className="font-bold text-white">Progress</span>
-        <span className="font-bold text-white">
-          {current}/{total} ingredients
-        </span>
-      </div>
-      <div className="h-4 bg-white/30 rounded-full overflow-hidden">
-        <div
-          className="h-full bg-gradient-to-r from-yellow-400 to-green-400 transition-all duration-500 rounded-full"
-          style={{ width: `${percentage}%` }}
-        />
-      </div>
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="bg-[#f4f1de] w-12 h-12 flex items-center justify-center text-2xl rounded-full font-bold hover:bg-[#e8e5d4] transition-transform active:scale-95 shadow"
+        aria-label="Menu"
+      >
+        ☰
+      </button>
+
+      {open && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} />
+          <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl p-3 flex flex-col gap-2 z-50">
+            <button
+              type="button"
+              onClick={() => { onOpenStickers(); setOpen(false); }}
+              className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold hover:bg-[#f4f1de] transition-colors text-left"
+            >
+              <span className="text-xl">📒</span> Stickers
+            </button>
+            <button
+              type="button"
+              onClick={() => { onOpenShop(); setOpen(false); }}
+              className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold hover:bg-[#f4f1de] transition-colors text-left"
+            >
+              <span className="text-xl">🛍️</span> Shop
+            </button>
+            <button
+              type="button"
+              onClick={onToggleTimer}
+              className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-colors text-left ${isTimerMode ? "bg-[#9BC1BC]" : "hover:bg-[#f4f1de]"}`}
+            >
+              <span className="text-xl">⏱️</span> Timer {isTimerMode ? "ON" : "OFF"}
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -559,7 +575,7 @@ function App() {
   const [unlockedStickers, setUnlockedStickers] = useState<string[]>(() => JSON.parse(localStorage.getItem("chefStickers") || "[]"));
   const [unlockedThemes, setUnlockedThemes] = useState<string[]>(() => JSON.parse(localStorage.getItem("chefThemes") || '["classic"]'));
   const [currentTheme, setCurrentTheme] = useState(() => localStorage.getItem("chefCurrentTheme") || "classic");
-  const [totalStars, setTotalStars] = useState(() => Number(localStorage.getItem("chefTotalStars")) || 0); // New Star State
+  const [totalStars, setTotalStars] = useState(() => Number(localStorage.getItem("chefTotalStars")) || 0);
   const [earnedCoinsLastGame, setEarnedCoinsLastGame] = useState(0);
 
   // Modals
@@ -594,15 +610,6 @@ function App() {
   const [timeLeft, setTimeLeft] = useState(30);
   const [isGameOver, setIsGameOver] = useState(false);
   const [isTimerActive, setIsTimerActive] = useState(false);
-
-  // DND Sensors - Enable click by requiring drag distance
-  const sensors = useSensors(
-    useSensor(PointerSensor, {
-      activationConstraint: {
-        distance: 8,
-      },
-    })
-  );
 
   const isComplete =
     selectedIngredients.length === currentRecipe.correctIngredients.length;
@@ -641,19 +648,6 @@ function App() {
       shuffleArray([...recipe.correctIngredients, ...recipe.wrongIngredients])
     );
   }, [currentRecipe]);
-
-  const handleDragEnd = (event: DragEndEvent) => {
-    const { active, over } = event;
-
-    if (over && over.id === "plate") {
-      const ingredient = active.data.current as Ingredient;
-      // Check if ingredient exists to make Typescript happy
-      if (!ingredient) return;
-
-      // Pass to existing handler logic
-      handleIngredientClick(ingredient);
-    }
-  };
 
   const handleIngredientClick = useCallback(
     (ingredient: Ingredient) => {
@@ -738,98 +732,64 @@ function App() {
     >
       {/* Header */}
       <header className="py-6 px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center max-w-4xl mx-auto gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-center max-w-8xl mx-auto gap-4">
           {/* Left - Title */}
           <div className="text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg mb-1">
+            <h1 className="text-4xl md:text-3xl font-extrabold  mb-1">
               👨‍🍳 Chef Mariana
             </h1>
-            <p className="text-white/90 text-lg">
+            <p className=" text-md">
               Cooking is fun!
             </p>
           </div>
 
           {/* Right - Controls */}
-          <div className="flex flex-wrap justify-center gap-3">
-            <button
-              onClick={() => setShowStickers(true)}
-              className="bg-teal-500 text-white px-4 py-2 rounded-full font-bold shadow-lg hover:bg-teal-600 transition-transform active:scale-95 flex items-center gap-2 border-2 border-teal-300"
-            >
-              <span>📒</span> <span className="hidden sm:inline">Stickers</span>
-            </button>
-
-            <button
-              onClick={() => setShowShop(true)}
-              className="bg-purple-600 text-white px-4 py-2 rounded-full font-bold shadow-lg hover:bg-purple-700 transition-transform active:scale-95 flex items-center gap-2 border-2 border-purple-400"
-            >
-              <span>🛍️</span> <span className="hidden sm:inline">Shop</span>
-            </button>
-
-            <div className="bg-yellow-400 text-yellow-900 px-4 py-2 rounded-full font-bold shadow-lg flex items-center gap-2 border-2 border-yellow-300">
+          <div className="flex items-center justify-center gap-3">
+            <div className="bg-[#f4f1de] px-4 py-2 rounded-full font-bold flex items-center gap-2 shadow">
               <span>🪙</span> {coins}
             </div>
 
-            <button
-              onClick={() => setIsTimerMode(!isTimerMode)}
-              className={`
-                px-4 py-2 rounded-full font-bold transition-all duration-300 shadow-lg border-2
-                ${isTimerMode ? "bg-red-500 border-red-300 text-white animate-pulse" : "bg-white/20 border-white/40 text-white hover:bg-white/30"}
-              `}
-            >
-              {isTimerMode ? "⏱️ ON" : "⏱️ OFF"}
-            </button>
+            <HeaderMenu
+              isTimerMode={isTimerMode}
+              onToggleTimer={() => setIsTimerMode(!isTimerMode)}
+              onOpenStickers={() => setShowStickers(true)}
+              onOpenShop={() => setShowShop(true)}
+            />
           </div>
         </div>
       </header>
 
       <main className="container mx-auto px-4 pb-8">
-        <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
-          {/* Recipe Selector */}
-          <RecipeSelector
-            recipes={recipes}
-            currentRecipe={currentRecipe}
-            onSelect={handleRecipeChange}
-            totalStars={totalStars}
-          />
+        {/* Recipe Selector */}
+        <RecipeSelector
+          recipes={recipes}
+          currentRecipe={currentRecipe}
+          onSelect={handleRecipeChange}
+          totalStars={totalStars}
+        />
 
-          {/* Current Recipe Info */}
-          <div className="text-center mb-6">
-            <h2 className="text-3xl font-bold text-white mb-2">
-              {currentRecipe.icon} {currentRecipe.name}
-            </h2>
-            <p className="text-white/80">{currentRecipe.description}</p>
-          </div>
-
-          {/* Timer Display */}
-          {isTimerMode && (
-            <div className="flex justify-center mb-6">
-              <div className={`
+        {/* Timer Display */}
+        {isTimerMode && (
+          <div className="flex justify-center mb-6">
+            <div className={`
               text-4xl font-black px-8 py-3 rounded-2xl shadow-xl transition-colors duration-300
               ${timeLeft <= 5 ? "bg-red-500 text-white animate-bounce" :
-                  timeLeft <= 10 ? "bg-orange-400 text-white" : "bg-white text-gray-800"}
+                timeLeft <= 10 ? "bg-orange-400 text-white" : "bg-white text-gray-800"}
             `}>
-                ⏱️ {timeLeft}s
-              </div>
+              ⏱️ {timeLeft}s
             </div>
-          )}
+          </div>
+        )}
 
-          {/* Progress Bar */}
-          <ProgressBar
-            current={selectedIngredients.length}
-            total={currentRecipe.correctIngredients.length}
-          />
-
-          {/* Game Area */}
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Plate */}
+        {/* Cooking Station: recipe display + ingredients grouped in one panel */}
+        <div className=" p-6 md:p-8">
+          <div className="grid md:grid-cols-2 gap-6 items-center">
+            {/* Recipe Display */}
             <div className="order-1 md:order-2">
-              <Plate
-                selectedIngredients={selectedIngredients}
-                recipe={currentRecipe}
-                isComplete={isComplete}
-              />
+              <RecipeDisplay recipe={currentRecipe} isComplete={isComplete} />
+
               {isComplete && (
-                <p className="text-center text-white font-bold text-xl mt-4 animate-pulse">
+                <p className="text-center  font-bold text-xl mt-4 animate-pulse">
                   Perfect! You did it! 🎉
                 </p>
               )}
@@ -837,10 +797,12 @@ function App() {
 
             {/* Ingredients */}
             <div className="order-2 md:order-1">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">
+
+              <h3 className="text-xl font-bold  mb-4 text-center">
                 Choose the ingredients:
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+
+              <div className="grid grid-cols-3 gap-4 justify-items-center">
                 {allIngredients.map((ingredient) => (
                   <IngredientCard
                     key={ingredient.id}
@@ -854,19 +816,15 @@ function App() {
                   />
                 ))}
               </div>
+              <div className="mt-8">
+                <ProgressBar
+                  current={selectedIngredients.length}
+                  total={currentRecipe.correctIngredients.length}
+                />
+              </div>
             </div>
           </div>
-
-          {/* Hint Section */}
-          <div className="mt-8 text-center">
-            <div className="inline-block bg-white/20 backdrop-blur rounded-2xl px-6 py-4">
-              <p className="text-white font-medium">
-                💡 <strong>Hint:</strong> A {currentRecipe.name} needs{" "}
-                {currentRecipe.correctIngredients.length} ingredients!
-              </p>
-            </div>
-          </div>
-        </DndContext>
+        </div>
       </main>
 
       {/* Wrong Ingredient Modal */}
@@ -932,69 +890,7 @@ function App() {
         )
       }
 
-      {/* Custom Styles */}
-      <style>{`
-        @keyframes shake {
-          0%, 100% { transform: translateX(0); }
-          10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-          20%, 40%, 60%, 80% { transform: translateX(5px); }
-        }
 
-        @keyframes pop {
-          0% { transform: scale(0); opacity: 0; }
-          50% { transform: scale(1.2); }
-          100% { transform: scale(1); opacity: 1; }
-        }
-
-        @keyframes bounce-slow {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-
-        @keyframes wiggle {
-          0%, 100% { transform: rotate(-3deg); }
-          50% { transform: rotate(3deg); }
-        }
-
-        @keyframes pulse-glow {
-          0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
-          50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.6); }
-        }
-
-        .animate-shake {
-          animation: shake 0.5s ease-in-out;
-        }
-
-        .animate-pop {
-          animation: pop 0.3s ease-out forwards;
-        }
-
-        .animate-bounce-slow {
-          animation: bounce-slow 1s ease-in-out infinite;
-        }
-
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-
-        .animate-wiggle {
-          animation: wiggle 0.5s ease-in-out;
-        }
-
-        .animate-pulse-glow {
-          animation: pulse-glow 2s ease-in-out infinite;
-        }
-
-        /* Fun hover effects for ingredient cards */
-        .ingredient-card:hover .ingredient-icon {
-          animation: wiggle 0.3s ease-in-out;
-        }
-      `}</style>
     </div >
   );
 }
